@@ -1,0 +1,65 @@
+﻿@model proyectoFinal.Models.mascota
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Nombre </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.propietario_Mascota.nombre)
+        </dd>
+
+        <dt>
+            <label>Especie </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_mascota.especie)
+        </dd>
+
+        <dt>
+            <label>Nombre </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            <label>Peso </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.peso)
+        </dd>
+
+        <dt>
+            <label>Sexo </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            <label>Fecha de nacimiento </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechanacimiento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codmascota }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

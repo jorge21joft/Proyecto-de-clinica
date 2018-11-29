@@ -1,0 +1,50 @@
+﻿@model proyectoFinal.Models.consulta
+
+@{
+    ViewBag.Title = "Delete";
+    String msj = ViewBag.errorMsj;
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Esta seguro de que desea eliminar este registro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Fecha de la cita </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cita.fecha)
+        </dd>
+
+        <dt>
+            <label>Diagnostico </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diagnostico)
+        </dd>
+
+        <dt>
+            <label>Observaciones </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observaciones)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la lista", "Index")
+        </div>
+        <h1 class="text-danger">@msj</h1>
+    }
+</div>

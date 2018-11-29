@@ -1,0 +1,63 @@
+﻿@model IEnumerable<proyectoFinal.Models.propietario_Mascota>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Propietario de mascota</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Nombre </label>
+        </th>
+        <th>
+            <label>Apellido </label>
+        </th>
+        <th>
+            <label>DUI </label>
+        </th>
+        <th>
+            <label>Sexo </label>
+        </th>
+        <th>
+            <label>Telefono </label>
+        </th>
+        <th>
+            <label>Direccion </label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dui)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codpropietario }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.codpropietario }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.codpropietario })
+        </td>
+    </tr>
+}
+
+</table>

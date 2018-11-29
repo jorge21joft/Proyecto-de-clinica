@@ -1,0 +1,33 @@
+﻿@model IEnumerable<proyectoFinal.Models.tipo_mascota>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tipos de Mascota</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Especie </label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.especie)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codtipo }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.codtipo }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.codtipo })
+        </td>
+    </tr>
+}
+
+</table>

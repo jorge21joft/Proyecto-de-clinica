@@ -1,0 +1,65 @@
+﻿@model proyectoFinal.Models.propietario_Mascota
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Nombre</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            <label>Apellido </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            <label>DUI </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dui)
+        </dd>
+
+        <dt>
+            <label>Sexo </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            <label>Telefono </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            <label>Direccion </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codpropietario }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

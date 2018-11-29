@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Citas", "Index", "citas")</li>
+                    <li>@Html.ActionLink("Consultas", "Index", "consultas")</li>
+                    <li>@Html.ActionLink("Estados", "Index", "estadoes")</li>
+                    <li>@Html.ActionLink("Mascota", "Index", "mascotas")</li>
+                    <li>@Html.ActionLink("Tipo de Mascota", "Index", "Tipo_mascota")</li>
+                    <li>@Html.ActionLink("Dueño Mascota", "Index", "propietario_mascota")</li>
+                    <li>@Html.ActionLink("Recetas", "Index", "recetas")</li>
+                    <li>@Html.ActionLink("Roles", "Index", "rols")</li>
+                    <li>@Html.ActionLink("Usuarios", "Index", "usuarios")</li>
+                    <li>@Html.ActionLink("Veterinario", "Index", "veterinarios")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </footer>
+    </div>
+
+  
+    @RenderSection("scripts", required: false)
+</body>
+</html>
